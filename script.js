@@ -5,14 +5,17 @@ const LOGIN_PASSWORD = "admin123";
 const loginPage = document.getElementById("loginPage");
 const appPage = document.getElementById("appPage");
 const loginForm = document.getElementById("loginForm");
+
 const loginError = document.getElementById("loginError");
 const issuesContainer = document.getElementById("issuesContainer");
 const issueCount = document.getElementById("issueCount");
 const spinner = document.getElementById("spinner");
+
 const emptyState = document.getElementById("emptyState");
 const tabButtons = document.querySelectorAll(".tab-btn");
 const searchForm = document.getElementById("searchForm");
 const searchInput = document.getElementById("searchInput");
+
 const issueModal = document.getElementById("issueModal");
 const modalBody = document.getElementById("modalBody");
 const closeModal = document.getElementById("closeModal");
@@ -32,7 +35,8 @@ loginForm.addEventListener("submit", (e) => {
     loginPage.classList.remove("active");
     appPage.classList.add("active");
     loadAllIssues();
-  } else {
+  } 
+  else {
     loginError.textContent = "Invalid username or password.";
   }
 });
