@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GitHub Issues Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Login Page -->
+  <section id="loginPage" class="page active">
+    <div class="login-wrapper">
+      <div class="login-card">
+        <div class="logo-box">
+  <img src="assets/github-logo.png" alt="Logo" />
+</div>
+        <h1 class="login-title">GitHub Issues Tracker</h1>
+        <p class="login-subtitle">
+          Sign in to manage, search, and track all issues in one place.
+        </p>
+
+        <form id="loginForm" class="login-form">
+          <div class="input-group">
+            <label for="username">Username</label>
+            <input id="username" type="text" placeholder="Enter username" />
+          </div>
+
+          <div class="input-group">
+            <label for="password">Password</label>
+            <input id="password" type="password" placeholder="Enter password" />
+          </div>
+
+          <button type="submit" class="btn btn-primary login-btn">Sign In</button>
+
+          <div class="demo-credentials">
+            <p><strong>Demo Credentials</strong></p>
+            <p>Username: <span>admin</span></p>
+            <p>Password: <span>admin123</span></p>
+          </div>
+
+          <p id="loginError" class="error-text"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main App -->
+  <section id="appPage" class="page">
+    <header class="navbar">
+      <div class="brand">
+        <div class="brand-logo">
+  <img src="assets/github-logo.png" alt="Logo" />
+</div>
+        <div>
+          <h2>Github Issues Tracker</h2>
+          <p>Track and manage project issues</p>
+        </div>
+      </div>
+
+      <form id="searchForm" class="search-box">
+        <input id="searchInput" type="text" placeholder="Search issues..." />
+        <button type="submit" class="btn btn-primary">Search</button>
+      </form>
+    </header>
+
+    <main class="container">
+      <section class="issues-panel">
+        <div class="tabs">
+          <button class="tab-btn active" data-filter="all">All</button>
+          <button class="tab-btn" data-filter="open">Open</button>
+          <button class="tab-btn" data-filter="closed">Closed</button>
+        </div>
+
+        <div class="panel-header">
+          <div class="panel-left">
+            <div class="panel-icon">
+  <img src="assets/Aperture.png" alt="Issues Icon" />
+</div>
+            <div>
+              <h3><span id="issueCount">0</span> Issues</h3>
+              <p>Showing issue records from the API</p>
+            </div>
+          </div>
+
+          <div class="panel-right">
+            <span class="marker open-marker">Open</span>
+            <span class="marker closed-marker">Closed</span>
+          </div>
+        </div>
+
+        <div id="spinner" class="spinner-wrap hidden">
+          <div class="spinner"></div>
+        </div>
+
+        <div id="emptyState" class="empty-state hidden">
+          No issues found.
+        </div>
+
+        <div id="issuesContainer" class="issues-grid"></div>
+      </section>
+    </main>
+  </section>
+
+  <!-- Modal -->
+  <div id="issueModal" class="modal hidden">
+    <div class="modal-overlay" id="modalOverlay"></div>
+
+    <div class="modal-content">
+      <button id="closeModal" class="modal-close">&times;</button>
+
+      <div id="modalBody">
+        <!-- Dynamic content -->
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
